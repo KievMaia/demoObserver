@@ -18,7 +18,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RequiredArgsConstructor
 public class PedidoController {
 
-    private PedidoService pedidoService;
+    private final PedidoService pedidoService;
 
     @PostMapping(
             value = "/demo",

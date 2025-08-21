@@ -6,5 +6,5 @@ import lombok.Data;
 @Builder
 @Data
 public class RestaurantePedido {
-    String ordem;
+    String pedido;
 }
