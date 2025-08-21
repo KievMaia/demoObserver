@@ -24,6 +24,7 @@ public class CommandCozinha extends CommandIGeneric<EventGeral> {
     public CommandCozinha(final GenericSubject<EventGeral> linkPaymentSubject) {
         super(List.of(EVENT_TYPE_PEDIDO_COZINHA));
         this.linkPaymentSubject = linkPaymentSubject;
+        this.linkPaymentSubject.subscribe(this);
     }
 
     @Override

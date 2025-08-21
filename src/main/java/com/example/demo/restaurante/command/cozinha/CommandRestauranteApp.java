@@ -24,6 +24,7 @@ public class CommandRestauranteApp extends CommandIGeneric<EventGeral> {
     public CommandRestauranteApp(final GenericSubject<EventGeral> linkPaymentSubject) {
         super(List.of(EVENT_TYPE_PEDIDO_APLICATIVO));
         this.linkPaymentSubject = linkPaymentSubject;
+        this.linkPaymentSubject.subscribe(this);
     }
 
     @Override

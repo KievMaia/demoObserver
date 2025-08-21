@@ -23,6 +23,7 @@ public class CommandEntrega extends CommandIGeneric<EventGeral> {
     public CommandEntrega(final GenericSubject<EventGeral> linkPaymentSubject) {
         super(List.of(EVENT_TYPE_PEDIDO_ENTREGA));
         this.linkPaymentSubject = linkPaymentSubject;
+        this.linkPaymentSubject.subscribe(this);
     }
 
     @Override
