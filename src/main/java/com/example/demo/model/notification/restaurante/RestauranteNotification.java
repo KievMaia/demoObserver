@@ -1,6 +1,5 @@
-package com.example.demo.model.notification.pedido;
+package com.example.demo.model.notification.restaurante;
 
-import com.example.demo.model.Pedido;
 import com.example.demo.model.notification.Notification;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -13,10 +12,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PedidoNotification implements Notification {
+public class RestauranteNotification implements Notification {
 
     private String productType;
-    private Pedido pedido;
+    private RestaurantePedido restaurantePedido;
 
     @Override
     public String getProductType() {

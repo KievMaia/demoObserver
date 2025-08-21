@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Pedido;
-import com.example.demo.service.PedidoService;
+import com.example.demo.model.notification.restaurante.RestaurantePedido;
+import com.example.demo.restaurante.service.PedidoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,8 +24,8 @@ public class PedidoController {
             value = "/demo",
             consumes = APPLICATION_JSON_VALUE,
             produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<Pedido> createDispatcher(@RequestBody Pedido pedido){
-        pedidoService.gerarPedido(toPedidoNotification(pedido));
+    public ResponseEntity<RestaurantePedido> createDispatcher(@RequestBody RestaurantePedido restaurantePedido){
+        pedidoService.gerarPedido(toPedidoNotification(restaurantePedido));
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 }

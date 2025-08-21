@@ -13,7 +13,6 @@ import java.util.List;
 
 import static com.example.demo.model.event.ObserverEventTypeEnum.EVENT_TYPE_PEDIDO_APLICATIVO;
 
-
 @Slf4j
 @Component
 @Getter
