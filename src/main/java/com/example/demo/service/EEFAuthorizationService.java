@@ -2,7 +2,6 @@ package com.example.demo.service;
 
 import com.example.demo.model.event.DefaultEvent;
 import com.example.demo.model.event.EventMetadata;
-import com.example.demo.model.notification.cartao.CardAuthorizationNotification;
 import com.example.demo.model.notification.eef.EEFAuthorizationNotification;
 import com.example.demo.observable.GenericSubject;
 import lombok.extern.slf4j.Slf4j;
