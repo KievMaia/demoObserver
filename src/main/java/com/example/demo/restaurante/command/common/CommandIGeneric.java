@@ -26,7 +26,7 @@ public abstract class CommandIGeneric<T extends EventGeral>
     }
   }
 
-  protected EventGeral buildNextEventCheckoutLinkEvent(
+  protected EventGeral buildNextEvent(
           EventGeral eventSolicitation, ObserverEventTypeEnum newEvent) {
     return EventGeral.builder()
         .eventMetadata(

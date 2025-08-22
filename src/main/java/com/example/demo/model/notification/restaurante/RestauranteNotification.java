@@ -16,9 +16,4 @@ public class RestauranteNotification implements Notification {
 
     private String productType;
     private RestaurantePedido restaurantePedido;
-
-    @Override
-    public String getProductType() {
-        return "";
-    }
 }

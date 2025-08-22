@@ -36,7 +36,7 @@ public class CommandCozinha extends CommandIGeneric<EventGeral> {
     private void sendNewEvent(EventGeral eventGeral) {
         log.info("Enviando um novo evento {}", ObserverEventTypeEnum.EVENT_TYPE_PEDIDO_ENTREGA);
         this.linkPaymentSubject.eventEmmit(
-                buildNextEventCheckoutLinkEvent(
+                buildNextEvent(
                         eventGeral, ObserverEventTypeEnum.EVENT_TYPE_PEDIDO_ENTREGA));
     }
 }

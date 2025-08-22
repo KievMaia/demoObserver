@@ -37,7 +37,7 @@ public class CommandRestauranteApp extends CommandIGeneric<EventGeral> {
     private void sendNewEvent(EventGeral eventGeral) {
         log.info("Sending new event {}", ObserverEventTypeEnum.EVENT_TYPE_PEDIDO_COZINHA);
         this.linkPaymentSubject.eventEmmit(
-                buildNextEventCheckoutLinkEvent(
+                buildNextEvent(
                         eventGeral, ObserverEventTypeEnum.EVENT_TYPE_PEDIDO_COZINHA));
     }
 }
