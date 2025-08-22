@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-import static com.example.demo.model.event.ObserverEventTypeEnum.EVENT_TYPE_DATA_PERSISTENCE;
 import static com.example.demo.model.event.ObserverEventTypeEnum.EVENT_TYPE_SEND_DATALAKE;
 
 @Slf4j
@@ -31,11 +30,5 @@ public class CommandDatalake extends CommandIGeneric<DefaultEvent> {
     public void execute(DefaultEvent defaultEvent) {
         log.info("Recebe o evento {}", defaultEvent.getEventMetadata().eventType());
         log.info("Envia o evento para o Datalake");
-        this.sendNewEvent(defaultEvent);
-    }
-
-    private void sendNewEvent(DefaultEvent defaultEvent) {
-        log.info("Sending new event {}", EVENT_TYPE_DATA_PERSISTENCE);
-        this.linkPaymentSubject.eventEmmit(buildNextEvent(defaultEvent, EVENT_TYPE_DATA_PERSISTENCE));
     }
 }

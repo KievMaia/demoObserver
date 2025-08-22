@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.chain.ProxyAdapterHandlerFactory;
 import com.example.demo.model.notification.eef.PostEEFAuthorizationRequest;
 import com.example.demo.service.EEFAuthorizationService;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RequiredArgsConstructor
 public class EEFAuthorizationController {
 
+    private final ProxyAdapterHandlerFactory handlerFactory;
     private final EEFAuthorizationService service;
 
     @PostMapping(
@@ -24,7 +26,7 @@ public class EEFAuthorizationController {
             consumes = APPLICATION_JSON_VALUE,
             produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<PostEEFAuthorizationRequest> authorize(@RequestBody PostEEFAuthorizationRequest request) {
-        service.process(toEEFAuthorizationNotification(request));
+        handlerFactory.buildChainForEEF().handle(toEEFAuthorizationNotification(request));
         return ResponseEntity.ok().build();
     }
 }

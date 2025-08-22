@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 import static com.example.demo.model.event.ObserverEventTypeEnum.EVENT_TYPE_SAP_PROCESSING;
-import static com.example.demo.model.event.ObserverEventTypeEnum.EVENT_TYPE_SEND_DATALAKE;
 
 @Slf4j
 @Component
@@ -31,11 +30,5 @@ public class CommandSAPProcessing extends CommandIGeneric<DefaultEvent> {
     public void execute(DefaultEvent defaultEvent) {
         log.info("Recebe o evento {}", defaultEvent.getEventMetadata().eventType());
         log.info("Envia para a fila SAP");
-        this.sendNewEvent(defaultEvent);
-    }
-
-    private void sendNewEvent(DefaultEvent defaultEvent) {
-        log.info("Sending new event {}", EVENT_TYPE_SEND_DATALAKE);
-        this.linkPaymentSubject.eventEmmit(buildNextEvent(defaultEvent, EVENT_TYPE_SEND_DATALAKE));
     }
 }

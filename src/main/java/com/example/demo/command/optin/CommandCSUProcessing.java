@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 import static com.example.demo.model.event.ObserverEventTypeEnum.EVENT_TYPE_CSU_PROCESSING;
-import static com.example.demo.model.event.ObserverEventTypeEnum.EVENT_TYPE_SAP_PROCESSING;
 
 @Slf4j
 @Component
@@ -30,11 +29,5 @@ public class CommandCSUProcessing extends CommandIGeneric<DefaultEvent> {
     @Override
     public void execute(DefaultEvent defaultEvent) {
         log.info("Envia o evento para o CSU");
-        this.sendNewEvent(defaultEvent);
-    }
-
-    private void sendNewEvent(DefaultEvent defaultEvent) {
-        log.info("Enviando um novo evento {}", EVENT_TYPE_SAP_PROCESSING);
-        this.linkPaymentSubject.eventEmmit(buildNextEvent(defaultEvent, EVENT_TYPE_SAP_PROCESSING));
     }
 }

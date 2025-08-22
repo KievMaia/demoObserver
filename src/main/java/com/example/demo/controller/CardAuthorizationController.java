@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.notification.cartao.PostCardAuthorizationRequest;
+import com.example.demo.chain.ProxyAdapterHandlerFactory;
+import com.example.demo.model.notification.card.PostCardAuthorizationRequest;
 import com.example.demo.service.CardAuthorizationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,8 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RequiredArgsConstructor
 public class CardAuthorizationController {
 
+    private final ProxyAdapterHandlerFactory handlerFactory;
+
     private final CardAuthorizationService service;
 
     @PostMapping(
@@ -25,7 +28,7 @@ public class CardAuthorizationController {
             consumes = APPLICATION_JSON_VALUE,
             produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<PostCardAuthorizationRequest> authorize(@RequestBody PostCardAuthorizationRequest request) {
-        service.process(toCardAuthorizationNotification(request));
+        handlerFactory.buildChainForCard().handle(toCardAuthorizationNotification(request));
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 }
