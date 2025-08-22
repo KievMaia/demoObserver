@@ -1,6 +1,6 @@
-package com.example.demo.cartao.command.common;
+package com.example.demo.command.common;
 
-import com.example.demo.model.event.OptInEvent;
+import com.example.demo.model.event.DefaultEvent;
 import com.example.demo.model.event.EventMetadata;
 import com.example.demo.model.event.ObserverEventTypeEnum;
 import lombok.extern.slf4j.Slf4j;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Slf4j
-public abstract class CommandIGeneric<T extends OptInEvent>
+public abstract class CommandIGeneric<T extends DefaultEvent>
     implements ICommandIGenericGenerator<T> {
 
   protected final List<ObserverEventTypeEnum> acceptableEventType;
@@ -26,9 +26,9 @@ public abstract class CommandIGeneric<T extends OptInEvent>
     }
   }
 
-  protected OptInEvent buildNextEvent(
-          OptInEvent eventSolicitation, ObserverEventTypeEnum newEvent) {
-    return OptInEvent.builder()
+  protected DefaultEvent buildNextEvent(
+          DefaultEvent eventSolicitation, ObserverEventTypeEnum newEvent) {
+    return DefaultEvent.builder()
         .eventMetadata(
             new EventMetadata(newEvent))
         .notification(eventSolicitation.getNotification())

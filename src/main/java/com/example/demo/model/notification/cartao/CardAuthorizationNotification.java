@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CardOptInNotification implements Notification {
+public class CardAuthorizationNotification implements Notification {
 
-    private CardOptIn cardOptin;
+    private PostCardAuthorizationRequest postAuthorizeCardRequest;
 }

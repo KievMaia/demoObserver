@@ -1,8 +1,7 @@
 package com.example.demo.model.event;
 
 public enum ObserverEventTypeEnum {
-    EVENT_TYPE_OPTIN_PROCESS,
-    EVENT_TYPE_OPTOUT_PROCESS,
+    EVENT_TYPE_OPTIN_OR_OPTOUT_PROCESS,
     EVENT_TYPE_CSU_PROCESSING,
     EVENT_TYPE_SAP_PROCESSING,
     EVENT_TYPE_SEND_DATALAKE,

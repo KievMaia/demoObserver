@@ -1,4 +1,4 @@
-package com.example.demo.cartao.command.common;
+package com.example.demo.command.common;
 
 public interface ICommandGeral<T> {
 

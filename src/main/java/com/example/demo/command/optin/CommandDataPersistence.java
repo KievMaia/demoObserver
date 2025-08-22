@@ -1,7 +1,7 @@
-package com.example.demo.cartao.command.optin;
+package com.example.demo.command.optin;
 
-import com.example.demo.cartao.command.common.CommandIGeneric;
-import com.example.demo.model.event.OptInEvent;
+import com.example.demo.command.common.CommandIGeneric;
+import com.example.demo.model.event.DefaultEvent;
 import com.example.demo.observable.GenericSubject;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,19 +16,19 @@ import static com.example.demo.model.event.ObserverEventTypeEnum.EVENT_TYPE_DATA
 @Component
 @Getter
 @Setter
-public class CommandDataPersistence extends CommandIGeneric<OptInEvent> {
+public class CommandDataPersistence extends CommandIGeneric<DefaultEvent> {
 
-    private final GenericSubject<OptInEvent> linkPaymentSubject;
+    private final GenericSubject<DefaultEvent> linkPaymentSubject;
 
-    public CommandDataPersistence(final GenericSubject<OptInEvent> linkPaymentSubject) {
+    public CommandDataPersistence(final GenericSubject<DefaultEvent> linkPaymentSubject) {
         super(List.of(EVENT_TYPE_DATA_PERSISTENCE));
         this.linkPaymentSubject = linkPaymentSubject;
         this.linkPaymentSubject.subscribe(this);
     }
 
     @Override
-    public void execute(OptInEvent optInEvent) {
-        log.info("Recebe o evento {}", optInEvent.getEventMetadata().eventType());
+    public void execute(DefaultEvent defaultEvent) {
+        log.info("Recebe o evento {}", defaultEvent.getEventMetadata().eventType());
         log.info("Persiste os dados necessários");
     }
 }

@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @NoArgsConstructor
-public class OptInEvent {
+public class DefaultEvent {
     EventMetadata eventMetadata;
     Notification notification;
 }

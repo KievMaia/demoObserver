@@ -1,4 +1,4 @@
-package com.example.demo.cartao.command.common;
+package com.example.demo.command.common;
 
 import com.example.demo.observable.IGenericObserver;
 

@@ -5,6 +5,6 @@ import lombok.Data;
 
 @Builder
 @Data
-public class CardOptIn {
+public class PostCardAuthorizationRequest {
     String authorization;
 }
