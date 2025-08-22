@@ -1,8 +1,8 @@
 package com.example.demo.observable;
 
-import com.example.demo.model.event.EventGeral;
+import com.example.demo.model.event.OptInEvent;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier("genericSubjectGenerator") public class GenericSubjectGenerator extends GenericSubject<EventGeral> {}
+@Qualifier("genericSubjectGenerator") public class GenericSubjectGenerator extends GenericSubject<OptInEvent> {}

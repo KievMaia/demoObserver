@@ -1,4 +1,4 @@
-package com.example.demo.restaurante.command.common;
+package com.example.demo.cartao.command.common;
 
 import com.example.demo.observable.IGenericObserver;
 

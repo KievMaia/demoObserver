@@ -1,4 +1,4 @@
-package com.example.demo.model.notification.restaurante;
+package com.example.demo.model.notification.cartao;
 
 import com.example.demo.model.notification.Notification;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -12,8 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RestauranteNotification implements Notification {
+public class CardOptInNotification implements Notification {
 
-    private String productType;
-    private RestaurantePedido restaurantePedido;
+    private CardOptIn cardOptin;
 }
