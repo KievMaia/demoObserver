@@ -2,7 +2,6 @@ package com.example.demo.controller;
 
 import com.example.demo.chain.ProxyAdapterHandlerFactory;
 import com.example.demo.model.notification.eef.PostEEFAuthorizationRequest;
-import com.example.demo.service.EEFAuthorizationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +18,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public class EEFAuthorizationController {
 
     private final ProxyAdapterHandlerFactory handlerFactory;
-    private final EEFAuthorizationService service;
 
     @PostMapping(
             value = "/demo-eef",

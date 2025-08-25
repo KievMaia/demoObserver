@@ -2,7 +2,6 @@ package com.example.demo.controller;
 
 import com.example.demo.chain.ProxyAdapterHandlerFactory;
 import com.example.demo.model.notification.card.PostCardAuthorizationRequest;
-import com.example.demo.service.CardAuthorizationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +19,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public class CardAuthorizationController {
 
     private final ProxyAdapterHandlerFactory handlerFactory;
-
-    private final CardAuthorizationService service;
 
     @PostMapping(
             value = "/demo-card",

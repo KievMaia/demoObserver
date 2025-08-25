@@ -35,7 +35,8 @@ public class ProxyAdapterHandlerFactory {
         );
 
         return IElementChainable.buildChain(
-                List.of(cardValidationStep, persistenceStep),
+                List.of(cardValidationStep,
+                        persistenceStep),
                 new NoHandleStep<>()
         );
     }
@@ -49,7 +50,8 @@ public class ProxyAdapterHandlerFactory {
         );
 
         return IElementChainable.buildChain(
-                List.of(persistenceStep, eefValidationStep),
+                List.of(persistenceStep,
+                        eefValidationStep),
                 new NoHandleStep<>()
         );
     }
