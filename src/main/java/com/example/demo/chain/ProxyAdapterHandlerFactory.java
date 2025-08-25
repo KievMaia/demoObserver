@@ -28,9 +28,9 @@ public class ProxyAdapterHandlerFactory {
         var persistenceStep = new PersistenceStep(
                 genericSubject,
                 notification -> List.of(
-                        EVENT_TYPE_SEND_DATALAKE,
+                        EVENT_TYPE_SAP_PROCESSING,
                         EVENT_TYPE_CSU_PROCESSING,
-                        EVENT_TYPE_SAP_PROCESSING
+                        EVENT_TYPE_SEND_DATALAKE
                 )
         );
 
