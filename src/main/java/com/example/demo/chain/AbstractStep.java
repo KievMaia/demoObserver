@@ -21,10 +21,7 @@ public abstract class AbstractStep<T extends Notification> implements IElementCh
         var watch = new StopWatch();
         watch.start();
         try {
-            handleAndApplyNext(event).ifPresentOrElse(
-                    next::handle,
-                    () -> next.handle(event)
-            );
+            handleAndApplyNext(event).ifPresent(next::handle);
         } catch (Exception e) {
             handleException(e, event);
         } finally {
